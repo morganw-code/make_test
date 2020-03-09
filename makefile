@@ -4,12 +4,14 @@ CFLAGS=-I.
 DEPS=helper.h
 OBJ=main.o helper.o
 
-# rule macro for obj files
+# rule macro for obj files.
 %.o: %.cpp $(DEPS)
+# g++ -c -o main.o main.cpp -I.
+# g++ -c -o helper.o helper.cpp -I.
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 test: $(OBJ)
-# translation: 'g++ -o test main.cpp helper.cpp helper.h -I.' (i think)
+# g++ -o test main.o helper.o helper.h -I.
 	$(CC) -o $@ $^ $(CFLAGS)
 
 # prevents make from treating 'clean' as a file when executing 'make clean'

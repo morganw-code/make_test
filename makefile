@@ -1,10 +1,7 @@
 # constants
 CC=g++
-# flags
 CFLAGS=-I.
-# header / include files
 DEPS=helper.h
-# make knows to compile the .cpp version of the file
 OBJ=main.o helper.o
 
 # rule macro for obj files
